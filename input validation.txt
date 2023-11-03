@@ -1,0 +1,23 @@
+procedure InputValidation(output Character cPrompt, input Array arrValidInput, input cErrorMsg, output cUserInput)
+begin
+    Display cPrompt;
+
+    while (cUserInput is empty or invalid)
+    begin
+        Accept cUserInput;
+
+        // Convert cUserInput to lowercase
+        cUserInput = cUserInput.toLowerCase
+
+        // Iterate through arrValidInput and check if cUserInput match with one of the valid input
+        for (nI = 0;nI < len(arrValidInput); nI++)
+            begin
+                cValidInput = arrValidInput[nI];
+                if (cUserInput == cValidInput)
+                    begin
+                        return cUserInput;              
+                    end
+                endif
+            end
+    end
+end

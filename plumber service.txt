@@ -1,0 +1,46 @@
+function plumberService
+begin
+    Character cTile, cDescription, cPlumberChoice;
+    Date dDate;
+
+    Display "What can we do for you?";
+    Display "1. Pipe leaks";
+    Display "2. Toilet problems";
+    Display "3. Faucet problems";
+    Display "4. Shower problems";
+    Display "5. Other";
+    
+    cPlumberChoice = call inputValidation(
+        cPrompt = "Select problem: ",
+        arrValidInput = ["1", "2", "3", "4", "5"],
+        cErrorMsg = "Invalid input. Please enter number from 1 to 5."
+    );
+
+    switch (cPLumberChoice):
+        begin
+            case "1":
+                cTitle = "Pipe leaks";
+                break;
+            
+            case "2":
+                cTitle = "Toilet problems";
+                break;
+
+            case "3":
+                cTitle = "Faucet problems";
+                break;
+
+            case "4":
+                cTitle = "Shower problems";
+
+            case "5":
+                Accept cTitle;
+                break;
+        end
+    
+    Display "Description: ";
+    Accept cDescription;
+    dDate = call dateSelection;
+    cReserveDuration = call 
+    
+end
