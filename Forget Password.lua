@@ -1,80 +1,47 @@
 //Pseudocode Forget_Password_Menu
+procedure ForgotPassword(input character cEmail)
 begin
-    Character cEmail;
+    Character cDatabaseEmail, cDatabasePassword, cNewPassword, cConfirmPassword;
+
     Display "Forgot Password?"
     Display "Input your existing Email"
     Display "Input cEmail"
     accept cEmail;
 
-    if (cEmail = NotAvailable)
-        begin
-        Display "the Email is incorrect"
-        while (cEmail is not valid or empty)
-        begin
-            if ((cEmailChoice == 'y') or (cEmailChoice == 'n'))
-                begin
-                    break;
-                end
-            else
-                begin
-                    Display "Invalid input. Please enter 'y' for yes or 'n' for no";
-                end
-            end if
-        end
+    GET (cDatabaseEmail, cDatabasePassword) from database;
 
-    else if (cEmail = Available)
+    if (cEmail is not in database)
+        begin
+            Display "Email is not registered";
+        end
+    else if (cEmail is in database)
         begin
             Confirm "Send the reset password's link via Email"
-            Character cNewPassword, cConfirmPassword;
             Display "new password, repeat password"
             Display "Input cNewPassword"
             Display "Input cConfirmPassword"
             Accept cNewPassword;
             Accept cConfirmPassword;
             
-            if (cConfirmPassword != cNewPassword) then
+            // Check if the new password is the same as the old one
+            if (cNewPassword == cDatabasePassword)
                 begin
-                Display "Password is incorrect, Please insert the right one"
-                while (cConfirmPassword is not valid or empty)
-
+                    Display "The new password is the same as the old one. Please insert a new one.";
+                end
+            
+            // Check if the new password is the same as the confirmation password
+            else if (cNewPassword != cConfirmPassword)
                 begin
-                    if ((cConfirmPasswordChoice == 'y') or (cConfirmPasswordChoice == 'n'))
-                        begin
-                            break;
-                        end
-                    else
-                        begin
-                            Display "Invalid input. Please enter 'y' for yes or 'n' for no";
-                        end
-                    end if
+                    Display "Password is incorrect, Please insert the right one.";
                 end
             
             else if (cConfirmPassword == cNewPassword)
-                
                 begin
-                    if (cConfirmPassword and cNewPassword == cPassword) then
-                        Display "the new Password is the same as the old password, please insert a new one"
-
-                        begin
-                            if ((cConfirmPasswordChoice == 'y') or (cConfirmPasswordChoice == 'n'))
-                                begin
-                                    break;
-                                end
-                            else
-                                begin
-                                    Display "Invalid input. Please enter 'y' for yes or 'n' for no";
-                                end
-                            end if
-                        end
-
-                    else if (cConfirmPassword and cNewPassword != cPassword) then
-                        begin
-                            Save (cNewPassword) to database
-                            Display "new password has been changed, you may login now"
-                        end
-                    end if                                  
+                    // Save new password to database
+                    Save (cNewPassword) to database
+                    Display "new password has been changed, you may login now."
                 end
             end if
-        end
+        end                           
     end if
 end

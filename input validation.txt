@@ -1,8 +1,9 @@
 procedure InputValidation(output Character cPrompt, input Array arrValidInput, input cErrorMsg, output cUserInput)
 begin
+    Character cValidInput;
     Display cPrompt;
 
-    while (cUserInput is empty or invalid)
+    while (true)
     begin
         Accept cUserInput;
 
@@ -15,9 +16,22 @@ begin
                 cValidInput = arrValidInput[nI];
                 if (cUserInput == cValidInput)
                     begin
-                        return cUserInput;              
+                        // break from for loop
+                        break;
                     end
                 endif
             end
+        
+        if (cUserInput == cValidInput)
+            begin
+                // break from while loop
+                break;
+            end
+        // User input did not match with any of the valid inputs
+        else
+            begin
+                Display cErrorMsg;
+            end
+        endif
     end
 end
