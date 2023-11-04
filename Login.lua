@@ -1,36 +1,58 @@
 //Pseudocode Login_Menu
-Procedure Login(output numeric, output character, output character)
+Procedure Login(output numeric nPhoneNumber, output character cPassword)
 begin
-
-    repeat
+    Character cDatabasePassword, cRegisterChoice;
+    Numeric nDatabasePhoneNumber;
+    while (true)
     begin
         Display "enter your Phonenumber and Password"
         Display "Input nPhonenumber"
-        Display "Input cPassword"
         accept nPhoneNumber;
+        Display "Input cPassword"
         accept cPassword;
-
-    end until (nPhoneNumber and cPassword = Available)
-
-    if (nPhoneNumber and cPassword = NotAvailable)
-        begin
-            Display "Cell Phone format or password are wrong"
-            
-            cForgotPassword = inputValidation(
-                cPrompt = "Forgot Your Password?"
-                arrValidInput = ["y", "n"]
-                cErrorMsg = "Invalid input, Please enter 'y' for yes or 'n' for no"
-            );
         
-            if (cForgotPassword == 'y')
-                begin                    
-                    Call ForgotPassword;                    
-                end
-            end if
-        end
-    else if (nPhoneNumber and cPassword = Available)
-        begin
-            Display "Login Succes"
-        end
-    end if
+        GET (cDatabasePassword, nDatabasePhoneNumber) from database;
+
+        if (nPhoneNumber not exists in database)
+            begin
+                call inputValidation(
+                    "Account not exist. Do you want to register?",
+                    ["y", "n"],
+                    "Invalid input, Please enter 'y' for yes or 'n' for no",
+                    cRegisterChoice
+                );
+
+                if (cRegisterChoice == 'y')
+                    begin 
+                        call Register();
+                    end
+                endif
+            end
+        endif
+
+        else if ((nPhoneNumber != nDatabasePhoneNumber) or (cPassword != cDatabasePassword))
+            begin
+                Display "Cell Phone or password is incorrect";
+                
+                call inputValidation(
+                    "Forgot Your Password?",
+                    ["y", "n"],
+                    "Invalid input, Please enter 'y' for yes or 'n' for no",
+                    cForgotPassword
+                );
+            
+                if (cForgotPassword == 'y')
+                    begin                    
+                        call ForgotPassword();                    
+                    end
+                endif
+            end
+        else if ((nPhoneNumber == nDatabasePhoneNumber) and (cPassword == cDatabasePassword))
+            begin
+                Display "Login Success";
+                // Break from while loop
+                break;
+            end
+        endif
+    end
 end

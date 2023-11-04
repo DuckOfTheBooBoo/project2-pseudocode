@@ -1,80 +1,51 @@
 //Pseudocode Forget_Password_Menu
+procedure ForgotPassword(input character cEmail)
 begin
-    Character cEmail;
-    Display "Forgot Password?"
-    Display "Input your existing Email"
-    Display "Input cEmail"
+    Character cDatabaseEmail, cDatabasePassword, cNewPassword, cConfirmPassword;
+    Display "Forgot Password?";
+    Display "Input your existing Email";
+    Display "Input cEmail";
     accept cEmail;
 
-    if (cEmail = NotAvailable)
+    GET (cDatabaseEmail, cDatabasePassword) from database;
+
+    if (cEmail not exists in database)
         begin
-        Display "the Email is incorrect"
-        while (cEmail is not valid or empty)
-        begin
-            if ((cEmailChoice == 'y') or (cEmailChoice == 'n'))
-                begin
-                    break;
-                end
-            else
-                begin
-                    Display "Invalid input. Please enter 'y' for yes or 'n' for no";
-                end
-            end if
+            Display "the Email is not registered"
         end
 
-    else if (cEmail = Available)
+    else if (cEmail exists in database)
         begin
             Confirm "Send the reset password's link via Email"
             Character cNewPassword, cConfirmPassword;
             Display "new password, repeat password"
-            Display "Input cNewPassword"
-            Display "Input cConfirmPassword"
-            Accept cNewPassword;
-            Accept cConfirmPassword;
             
-            if (cConfirmPassword != cNewPassword) then
-                begin
-                Display "Password is incorrect, Please insert the right one"
-                while (cConfirmPassword is not valid or empty)
+            // Keep asking for user input if cConfirmPassword is not the same as cNewPassword
+            while (true)
+            begin
+                Display "Input cNewPassword"
+                Display "Input cConfirmPassword"
+                Accept cNewPassword;
+                Accept cConfirmPassword;
 
-                begin
-                    if ((cConfirmPasswordChoice == 'y') or (cConfirmPasswordChoice == 'n'))
-                        begin
-                            break;
-                        end
-                    else
-                        begin
-                            Display "Invalid input. Please enter 'y' for yes or 'n' for no";
-                        end
-                    end if
-                end
+                if (cConfirmPassword != cNewPassword)
+                    begin
+                        Display "Password is incorrect, Please insert the right one";
+                    end
+                else if (cNewPassword == cDatabasePassword)
+                    begin
+                        Display "the new Password is the same as the old password, please insert a new one";
+                    end
+                else
+                    begin
+                        // break from while loop
+                        break;
+                    end
+                endif
+            end
             
-            else if (cConfirmPassword == cNewPassword)
-                
-                begin
-                    if (cConfirmPassword and cNewPassword == cPassword) then
-                        Display "the new Password is the same as the old password, please insert a new one"
-
-                        begin
-                            if ((cConfirmPasswordChoice == 'y') or (cConfirmPasswordChoice == 'n'))
-                                begin
-                                    break;
-                                end
-                            else
-                                begin
-                                    Display "Invalid input. Please enter 'y' for yes or 'n' for no";
-                                end
-                            end if
-                        end
-
-                    else if (cConfirmPassword and cNewPassword != cPassword) then
-                        begin
-                            Save (cNewPassword) to database
-                            Display "new password has been changed, you may login now"
-                        end
-                    end if                                  
-                end
-            end if
+            Save (cNewPassword) to database;
+            Display "new password has been changed, you may login now";            
         end
-    end if
+    endif
 end
