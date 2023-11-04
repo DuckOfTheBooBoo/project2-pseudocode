@@ -1,5 +1,5 @@
 //Proses System = Date Selection
-//Pseudocode Dateate Selection
+//Pseudocode Date Selection
 
 procedure Date (output date dDate);
 begin
