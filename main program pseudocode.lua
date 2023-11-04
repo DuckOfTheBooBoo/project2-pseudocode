@@ -10,7 +10,7 @@ procedure AirConditionerTechnician()
 procedure DateSelection()
 procedure ReserveDuration()
 procedure Payment()
-procedure InputValidation()
+procedure InputValidation(input character, input array, input character, output character)
 
 // Main program
 begin

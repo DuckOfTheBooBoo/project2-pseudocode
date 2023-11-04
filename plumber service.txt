@@ -1,8 +1,5 @@
-function plumberService
+procedure Plumber(output character cTitle, output character cDescription, output character cProblemChoice, output date dDate)
 begin
-    Character cTile, cDescription, cPlumberChoice;
-    Date dDate;
-
     Display "What can we do for you?";
     Display "1. Pipe leaks";
     Display "2. Toilet problems";
@@ -10,13 +7,14 @@ begin
     Display "4. Shower problems";
     Display "5. Other";
     
-    cPlumberChoice = call inputValidation(
-        cPrompt = "Select problem: ",
-        arrValidInput = ["1", "2", "3", "4", "5"],
-        cErrorMsg = "Invalid input. Please enter number from 1 to 5."
+    call inputValidation(
+        "Select problem: ",
+        ["1", "2", "3", "4", "5"],
+        "Invalid input. Please enter number from 1 to 5.",
+        cProblemChoice
     );
 
-    switch (cPLumberChoice):
+    switch (cProblemChoice):
         begin
             case "1":
                 cTitle = "Pipe leaks";
@@ -34,13 +32,14 @@ begin
                 cTitle = "Shower problems";
 
             case "5":
+                Display "Custom title: ";
                 Accept cTitle;
                 break;
         end
     
     Display "Description: ";
     Accept cDescription;
-    dDate = call dateSelection;
+    call DateSelection(dDate);
     cReserveDuration = call 
     
 end

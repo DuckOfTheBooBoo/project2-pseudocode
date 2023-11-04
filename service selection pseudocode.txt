@@ -1,31 +1,31 @@
-procedure serviceSelection
+procedure serviceSelection(output character cServiceChoice)
 begin
-	Character cServiceChoice;
 	Display "Select Service: ";
 	Display "1. Plumber";
 	Display "2. Electrician";
 	Display "3. Carpenter";
-	Display "4. Septic Tank Cleaner";
+	Display "4. Air Conditioner Technician";
 	
-	nServiceChoice = call inputValidation(
-		cPrompt = "Select service: ", 
-		arrValidInput = ["1", "2", "3", "4", "5"], 
-		cErrorMsg = "Invalid input. Please enter number from 1 to 5."
+	call inputValidation(
+		"Select service: ", 
+		["1", "2", "3", "4"], 
+		"Invalid input. Please enter number from 1 to 4.",
+		cServiceChoice
 	);
 	
 	switch (cServiceChoice)
 		begin
 			case "1":
-				Call plumberService;
+				call Plumber();
 				break;
 			case "2":
-				Call electricianService;
+				call Electrician();
 				break;
 			case "3":
-				Call carpenterService;
+				call Carpenter();
 				break;
 			case "4":
-				Call septicTank;
+				call AirConditionerTechnician();
 				break;
 			end
 	endif
