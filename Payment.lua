@@ -1,5 +1,6 @@
 //Proses System = payment
 //Pseudocode payment
+
 Procedure Payment (output numeric, output character);
 begin 
     Character
@@ -46,6 +47,7 @@ begin
                   begin 
                       Display "There something wrong with your payment, please contact our customer service" nCS;
                       call Payment;
+                  end
                 endif
             endif
         endif  
@@ -66,9 +68,9 @@ begin
                         Display "Description" : cDescription ;
                         Display "Reservation Date" : cReservationDate;
                         Display "Reservetion Duration" : cReservationDuration ;
-                    Display "Total:" ntotal;
-                    Display "====================";
-                    Display "thanks you";
+                        Display "Total:" ntotal;
+                        Display "====================";
+                        Display "thanks you";
                     else 
                       begin
                           Display "There something wrong with your payment, please contact our customer service" nCS;
@@ -165,10 +167,11 @@ begin
                         Display "There something wrong with your payment, please contact our customer service" nCS;
                         call Payment;
                       end
-                    endif
-                // Disini
-                end
+                      endif
                 endif 
            endif
-    break;
+      break;
+        Default:
+          Display "you have entered the wrong input";
+      end;    
 end;
