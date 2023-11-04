@@ -1,5 +1,5 @@
 // Procedures declaration
-procedure Register(input numeric, output character, output characcter, output character)
+procedure Register(input numeric, output character, output character, output character)
 procedure Login(output numeric, output character)
 procedure ForgotPassword(input character)
 procedure ServiceSelection()

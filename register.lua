@@ -1,9 +1,9 @@
 //Pseudocode Register_Menu
-procedure Register(input numeric nPhonenNumber, output character cName, output characcter cPassword, output character cEmail)
+procedure Register(output numeric nPhoneNumber, output character cName, output characcter cPassword, output character cEmail)
 begin
+    Character cLoginChoice;
     while (true)
     begin
-        Character cLoginChoice;
         Display "Please insert your Personal Information Below";
         Display "Name, PhoneNumber, Email";
         Display "Input Name";
@@ -15,6 +15,7 @@ begin
         Display "Input PhoneNumber";
         accept nPhoneNumber;
         
+        // Ask user when account is already registered in database
         if (nPhoneNumber exists in database)
             begin
                 call InputValidation(
@@ -37,6 +38,9 @@ begin
             begin
                 Save (cName, cPassword, cEmail, nPhoneNumber) to database;
                 Diplay "Congrats, your account has been registered, you may login now";
+
+                // Break from while loop
+                break;
             end
         endif
     end

@@ -1,6 +1,6 @@
 //Pseudocode reservation
 
-# nanti cek lagi
+
 procedure(output character,  output numeric);
 
 begin 
