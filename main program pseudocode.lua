@@ -1,11 +1,12 @@
 // Procedures declaration
 procedure Register(input numeric, output character, output characcter, output character)
 procedure Login(output numeric, output character)
+procedure ForgotPassword(input character)
 procedure ServiceSelection()
 procedure Plumber()
 procedure Electrician()
 procedure Carpenter()
-procedure HVACTechnician()
+procedure AirConditionerTechnician()
 procedure DateSelection()
 procedure ReserveDuration()
 procedure Payment()
