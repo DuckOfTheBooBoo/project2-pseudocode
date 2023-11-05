@@ -1,4 +1,4 @@
-procedure Plumber(output character cTitle, output character cDescription, output character cProblemChoice, output date dDate)
+procedure Plumber(output character cTitle, output character cDescription, output character cProblemChoice, output date dDate, output character cReserveDuration, output numeric nServiceCost)
 begin
     Display "What can we do for you?";
     Display "1. Pipe leaks";
@@ -40,6 +40,6 @@ begin
     Display "Description: ";
     Accept cDescription;
     call DateSelection(dDate);
-    cReserveDuration = call 
+    call ReserveDuration(cReserveDuration, nServiceCost);
     
 end

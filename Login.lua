@@ -1,7 +1,7 @@
 //Pseudocode Login_Menu
 Procedure Login(output numeric nPhoneNumber, output character cPassword)
 begin
-    Character cDatabasePassword, cRegisterChoice;
+    Character cDatabasePassword, cRegisterChoice, cForgotPassword;
     Numeric nDatabasePhoneNumber;
     while (true)
     begin
@@ -50,7 +50,7 @@ begin
         else if ((nPhoneNumber == nDatabasePhoneNumber) and (cPassword == cDatabasePassword))
             begin
                 Display "Login Success";
-                // Break from while loop
+                // Break from while loop if login success
                 break;
             end
         endif

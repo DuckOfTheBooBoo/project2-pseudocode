@@ -1,5 +1,6 @@
-procedure serviceSelection(output character cServiceChoice)
+procedure serviceSelection(output character cTitle, output character cDescription, output character cProblemChoice, output date dDate, output character cReserveDuration, output numeric nServiceCost)
 begin
+	Character cServiceChoice;
 	Display "Select Service: ";
 	Display "1. Plumber";
 	Display "2. Electrician";
@@ -16,16 +17,16 @@ begin
 	switch (cServiceChoice)
 		begin
 			case "1":
-				call Plumber();
+				call Plumber(cTitle, cDescription, cProblemChoice, dDate, cReserveDuration, nServiceCost);
 				break;
 			case "2":
-				call Electrician();
+				call Electrician(cTitle, cDescription, cProblemChoice, dDate, cReserveDuration, nServiceCost);
 				break;
 			case "3":
-				call Carpenter();
+				call Carpenter(cTitle, cDescription, cProblemChoice, dDate, cReserveDuration, nServiceCost);
 				break;
 			case "4":
-				call AirConditionerTechnician();
+				call AirConditionerTechnician(cTitle, cDescription, cProblemChoice, dDate, cReserveDuration, nServiceCost);
 				break;
 			end
 	endif

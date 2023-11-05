@@ -2,19 +2,19 @@
 procedure Register(input numeric, output character, output character, output character)
 procedure Login(output numeric, output character)
 procedure ForgotPassword(input character)
-procedure ServiceSelection(output character)
-procedure Plumber(output character, output character, output characcter, output dDate)
-procedure Electrician(output character, output character, output characcter, output dDate)
-procedure Carpenter(output character, output character, output characcter, output dDate)
-procedure AirConditionerTechnician(output character, output character, output characcter, output dDate)
-procedure DateSelection()
-procedure ReserveDuration()
-procedure Payment()
+procedure ServiceSelection(output character, output character, output character, output date, output character, output numeric)
+procedure Plumber(output character, output character, output character, output date, output character, output numeric)
+procedure Electrician(output character, output character, output character, output date, output character, output numeric)
+procedure Carpenter(output character, output character, output character, output date, output character, output numeric)
+procedure AirConditionerTechnician(output character, output character, output character, output date, output character, output numeric)
+procedure DateSelection(output date)
+procedure ReserveDuration(output character, output numeric)
+procedure Payment(input character, input character, input character, input date, input character, input numeric, input numeric)
 procedure InputValidation(input character, input array, input character, output character)
 
 // Main program
 begin
-	Character cAccountChoice, cServiceChoice, cMethod, cPaymentChoose, cEmail, cName, cEmailChoice, cForgotPassword, cTitle, cDescription, cProblemChoice;
+	Character cAccountChoice, cServiceChoice, cMethod, cPaymentChoose, cEmail, cName, cForgotPassword, cTitle, cDescription, cProblemChoice;
     Numeric nPhoneNumber, nPayment, nBCA_VA, nMandiri_VA, nCS, nServiceCost, nTotal;
     Date dDate;
 
@@ -31,12 +31,11 @@ begin
 	// Ask user to register if the answer is 'n'
 	if (cAccountChoice == "n")
 		begin
-			call Register();
+			call Register(nPhoneNumber, cName, cPassword, cEmail);
 		end
 	endif
 	
-	// 
-	call Login();
+	call Login(nPhoneNumber, cPassword);
 
 	call ServiceSelection();
 	call Payment();

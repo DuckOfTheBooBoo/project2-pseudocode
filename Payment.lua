@@ -1,7 +1,6 @@
-//Proses System = payment
 //Pseudocode payment
 
-Procedure Payment (output numeric, output character);
+Procedure Payment(input character cName, input character cTitle, input character cDescription, input date dDate, input character cReservationDuration, input numeric nPhoneNumber, input numeric nServiceCost);
 begin 
     Character
     cMethod, cPayment_choose;
@@ -21,28 +20,30 @@ begin
             Display "Select Your payment method": 
             Display "1.BCA"
             Display "2.Mandiri";
-        accept cPayment_choose
-        if (cPayment_choose == "1") ;
+            accept cPayment_choose;
+        if (cPayment_choose == "1");
             begin
-                Display "Your total price is ntotal";
-                Display "please submit your payment to this Virtual Account" nBCA_VA;
+                Display "Your total price is nTotal";
+                Display "please submit your payment to this Virtual Account " + nBCA_VA;
+
+                // Do the payment to respective method
                 accept nPayment;
-            
-            if (nPayment = Success);
+            end
+            if ((nPayment = Success) and (nPayment == nTotal));
             begin
-                if (nPayment == ntotal);
+                if (nPayment == nTotal);
                  begin
                     Display "====================";
-                    Display "Your payment successful";
-                    Display "Guest name" : cName ;
-                    Display "Phone Number" : nPhoneNumber ;
-                    Display "Problem" : cProblem ;
-                    Display "Description" : cDescription ;
-                    Display "Reservation Date" : cReservationDate;
-                    Display "Reservetion Duration" : cReservationDuration ;
-                    Display "Total:" ntotal;
+                    Display "Your payment is successful";
+                    Display "Guest name: " + cName;
+                    Display "Phone Number: " + nPhoneNumber;
+                    Display "Problem: " + cTitle;
+                    Display "Description: " + cDescription;
+                    Display "Reservation Date: " + dDate;
+                    Display "Reservetion Duration: " + cReservationDuration;
+                    Display "Total:" + nTotal;
                     Display "====================";
-                    Display "thanks you";
+                    Display "thank you";
                   else
                   begin 
                       Display "There something wrong with your payment, please contact our customer service" nCS;
@@ -53,24 +54,24 @@ begin
         endif  
           else if (cPayment_choose == "2");
               begin
-                  Display "Your total price is ntotal";
+                  Display "Your total price is nTotal";
                   Display   "please submit your payment to this Virtual Account" nMandiri_VA;
                   accept nPayment;
                   if (nPayment = Success); 
                   begin
-                    if (nPayment == ntotal);
+                    if (nPayment == nTotal);
                     begin 
                         Display "====================";
                         Display "Your payment successful";
-                        Display "Guest name" : cName ;
-                        Display "Phone Number" : nPhoneNumber ;
-                        Display "Problem" : cProblem ;
-                        Display "Description" : cDescription ;
-                        Display "Reservation Date" : cReservationDate;
-                        Display "Reservetion Duration" : cReservationDuration ;
-                        Display "Total:" ntotal;
+                        Display "Guest name" + cName;
+                        Display "Phone Number" + nPhoneNumber;
+                        Display "Problem" + cTitle;
+                        Display "Description" + cDescription;
+                        Display "Reservation Date" + cReservationDate;
+                        Display "Reservetion Duration" + cReservationDuration;
+                        Display "Total:" nTotal;
                         Display "====================";
-                        Display "thanks you";
+                        Display "thank you";
                     else 
                       begin
                           Display "There something wrong with your payment, please contact our customer service" nCS;
@@ -89,23 +90,23 @@ begin
             accept cPayment_choose;
         if (cPayment_choose == 1);
             begin 
-                Display "Your total price is" ntotal;
+                Display "Your total price is" nTotal;
                 accept nPayment
                 if (Payment = Success);
                   begin
-                    if (Payment == ntotal);
+                    if (Payment == nTotal);
                       begin 
                           Display "====================";
                           Display "Your payment successful";
-                          Display "Guest name" : cName ;
-                          Display "Phone Number" : nPhoneNumber ;
-                          Display "Problem" : cProblem ;
-                          Display "Description" : cDescription ;
-                          Display "Reservation Date" : cReservationDate;
-                          Display "Reservetion Duration" : cReservationDuration ;
-                          Display "Total:" ntotal;
+                          Display "Guest name" + cName;
+                          Display "Phone Number" + nPhoneNumber;
+                          Display "Problem" + cTitle;
+                          Display "Description" + cDescription;
+                          Display "Reservation Date" + cReservationDate;
+                          Display "Reservetion Duration" + cReservationDuration;
+                          Display "Total:" nTotal;
                           Display "====================";
-                          Display "thanks you";
+                          Display "thank you";
                       else 
                         begin
                           Display "There something wrong with your payment, please contact our customer service" nCS;
@@ -117,23 +118,23 @@ begin
 
           else if (cPayment_choose == 2);
               begin 
-                  Display "Your total price is" ntotal;
+                  Display "Your total price is" nTotal;
                   accept nPayment
-                    if (Payment = Success) ;
+                    if (Payment = Success);
                       begin
                          if (Payment == total);
                           begin 
                               Display "====================";
                               Display "Your payment successful";
-                              Display "Guest name" : cName ;
-                              Display "Phone Number" : nPhoneNumber ;
-                              Display "Problem" : cProblem ;
-                              Display "Description" : cDescription ;
-                              Display "Reservation Date" : cReservationDate;
-                              Display "Reservetion Duration" : cReservationDuration ;
-                              Display "Total:" ntotal;
+                              Display "Guest name" + cName;
+                              Display "Phone Number" + nPhoneNumber;
+                              Display "Problem" + cTitle;
+                              Display "Description" + cDescription;
+                              Display "Reservation Date" + cReservationDate;
+                              Display "Reservetion Duration" + cReservationDuration;
+                              Display "Total:" nTotal;
                               Display "====================";
-                              Display "thanks you";
+                              Display "thank you";
                       else
                         begin
                             Display "There something wrong with your payment, please contact our customer service" nCs;
@@ -145,7 +146,7 @@ begin
 
         else if (cPayment_choose == 3);
                 begin 
-                    Display "Your total price is" ntotal;
+                    Display "Your total price is" nTotal;
                     accept nPayment
                     if (Payment = Success);
                         begin
@@ -153,13 +154,13 @@ begin
                         begin 
                             Display "====================";
                             Display "Your payment successful";
-                            Display "Guest name" : cName ;
-                            Display "Phone Number" : nPhoneNumber ;
-                            Display "Problem" : cTitle ;
-                            Display "Description" : cDescription ;
-                            Display "Reservation Date" : cReservationDate;
-                            Display "Reservetion Duration" : cReservationDuration ;
-                            Display "Total:" ntotal;
+                            Display "Guest name" + cName;
+                            Display "Phone Number" + nPhoneNumber;
+                            Display "Problem" + cTitle;
+                            Display "Description" + cDescription;
+                            Display "Reservation Date" + cReservationDate;
+                            Display "Reservetion Duration" + cReservationDuration;
+                            Display "Total:" nTotal;
                             Display "====================";
                             Display "thank you";
                     else 

@@ -1,11 +1,11 @@
 //Proses System = Date Selection
 //Pseudocode Date Selection
 
-procedure Date (output date dDate);
+procedure Date(output date dDate);
 begin
     while(true)
     begin
-        Display "Select date for reservation : ";
+        Display "Select date for reservation: ";
         Accept dDate;
         if (dDate has passed?)
             begin
