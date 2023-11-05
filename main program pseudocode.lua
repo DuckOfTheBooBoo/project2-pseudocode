@@ -21,6 +21,7 @@ begin
 	Display "Welcome to Craftsmen Service Reservation System";
 	Display "Do you have an account?";
 
+	// Accept user input
 	call inputValidation(
 		"Do you have an account?",
 		["y", "n"],

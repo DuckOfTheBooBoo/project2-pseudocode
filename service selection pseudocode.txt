@@ -7,6 +7,7 @@ begin
 	Display "3. Carpenter";
 	Display "4. Air Conditioner Technician";
 	
+	// Accept user input
 	call inputValidation(
 		"Select service: ", 
 		["1", "2", "3", "4"], 
@@ -28,6 +29,5 @@ begin
 			case "4":
 				call AirConditionerTechnician(cTitle, cDescription, cProblemChoice, dDate, cReserveDuration, nServiceCost);
 				break;
-			end
-	endif
+		end
 end
