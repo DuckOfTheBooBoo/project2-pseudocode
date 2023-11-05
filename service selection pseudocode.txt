@@ -1,4 +1,4 @@
-procedure serviceSelection(output character cTitle, output character cDescription, output character cProblemChoice, output date dDate, output character cReserveDuration, output numeric nServiceCost)
+procedure serviceSelection(output character cTitle, output character cDescription, output date dDate, output character cReserveDuration, output numeric nServiceCost)
 begin
 	Character cServiceChoice;
 	Display "Select Service: ";

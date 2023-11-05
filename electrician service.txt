@@ -1,0 +1,46 @@
+procedure Plumber(output character cTitle, output character cDescription, output date dDate, output character cReserveDuration, output numeric nServiceCost)
+begin
+    Character cProblemChoice;
+    Display "What can we do for you?";
+    Display "1. Flickering lights";
+    Display "2. Switch or outlet don't work";
+    Display "3. Add new wall outlet";
+    Display "4. Loose wires";
+    Display "5. Other";
+    
+    call inputValidation(
+        "Select problem: ",
+        ["1", "2", "3", "4", "5"],
+        "Invalid input. Please enter number from 1 to 5.",
+        cProblemChoice
+    );
+
+    switch (cProblemChoice):
+        begin
+            case "1":
+                cTitle = "Flickering lights";
+                break;
+            
+            case "2":
+                cTitle = "Switch or outlet don't work";
+                break;
+
+            case "3":
+                cTitle = "Add new wall outlet";
+                break;
+
+            case "4":
+                cTitle = "Loose wires";
+
+            case "5":
+                Display "Custom title: ";
+                Accept cTitle;
+                break;
+        end
+    
+    Display "Description: ";
+    Accept cDescription;
+    call DateSelection(dDate);
+    call ReserveDuration(cReserveDuration, nServiceCost);
+    
+end
