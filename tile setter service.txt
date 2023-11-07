@@ -2,10 +2,10 @@ procedure Plumber(output character cTitle, output character cDescription, output
 begin
     Character cProblemChoice;
     Display "What can we do for you?";
-    Display "1. Install cabinets";
-    Display "2. Repair damaged woods";
-    Display "3. Repair damaged doors";
-    Display "4. Repair wooden furnitures";
+    Display "1. Remodel tile";
+    Display "2. Floor tile installation";
+    Display "3. Wall tile installation";
+    Display "4. Repair tile";
     Display "5. Other";
     
     call inputValidation(
@@ -18,19 +18,19 @@ begin
     switch (cProblemChoice):
         begin
             case "1":
-                cTitle = "Install cabinets";
+                cTitle = "Remodel tile";
                 break;
             
             case "2":
-                cTitle = "Repair damaged woods";
+                cTitle = "Floor tile installation";
                 break;
 
             case "3":
-                cTitle = "Repair damaged doors";
+                cTitle = "Wall tile installation";
                 break;
 
             case "4":
-                cTitle = "Repair wooden furnitures";
+                cTitle = "Repair tile";
 
             case "5":
                 Display "Custom title: ";
