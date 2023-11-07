@@ -1,8 +1,8 @@
 //Pseudocode reservation
-procedure(output character cReservationDuration,  output numeric nServiceCost);
+procedure(output character cReserveDuration,  output numeric nServiceCost);
 begin 
     Character 
-    cTimeChoice, cReservationDuration;
+    cTimeChoice, cReserveDuration;
 
     Numeric
     nServiceCost;
@@ -17,19 +17,19 @@ begin
 
         if(cTimeChoice == 1)
             begin
-                cReservationDuration = "08.00 - 12.00";
+                cReserveDuration = "08.00 - 12.00";
                 nServiceCost = 189000;
                 break;
             end
         else if(cTimeChoice == 2)
             begin
-                cReservationDuration = "13.00 - 17.00";
+                cReserveDuration = "13.00 - 17.00";
                 nServiceCost = 189000;
                 break;
             end
         else if(cTimeChoice == 3)
             begin
-                cReservationDuration = "08.00 - 17.00";
+                cReserveDuration = "08.00 - 17.00";
                 nServiceCost = 249000;
                 break;
             end
