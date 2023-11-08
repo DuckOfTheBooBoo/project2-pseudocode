@@ -39,7 +39,7 @@ begin
                             accept nPayment
                         end
                     endif
-                break
+                    break
 
                 case "2":
                     Display "select your payment method : "  
@@ -68,7 +68,7 @@ begin
                             break
                         end
                     endif
-                break
+                    break
 
                 Default:
                     Display "you have entered the wrong input"
