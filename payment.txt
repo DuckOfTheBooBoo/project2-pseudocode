@@ -89,6 +89,7 @@ begin
     else
       begin
           Display "There's something wrong with your payment, please contact our customer service" + nCSNumber
+          call Payment(cName, cTitle, cDescription, dDate, cReserveDuration, nPhoneNumber, nServiceCost);
        end  
     endif
 end
