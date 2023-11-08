@@ -13,12 +13,7 @@ begin
         
         GET (cDatabasePassword, nDatabasePhoneNumber) from database;
 
-        if (nPhoneNumber not exists in database)
-            begin
-                Display "Account is not registered"
-            end
-
-        else if ((nPhoneNumber != nDatabasePhoneNumber) or (cPassword != cDatabasePassword))
+        if ((nPhoneNumber != nDatabasePhoneNumber) or (cPassword != cDatabasePassword))
             begin
                 Display "Cell Phone or password is incorrect";
                 

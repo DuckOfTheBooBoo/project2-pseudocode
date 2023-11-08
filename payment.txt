@@ -70,7 +70,7 @@ begin
 
             Default:
                 Display "you have entered the wrong input";
-            break;
+                break;
         end;    
 
     if(nPayment == Success) and (nPayment == nServiceCost)
