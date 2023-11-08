@@ -5,7 +5,6 @@ begin
     while (true)
     begin
         Display "Please insert your Personal Information Below";
-        Display "Name, PhoneNumber, Email";
         Display "Input Name";
         accept cName;
         Display "Input Password";

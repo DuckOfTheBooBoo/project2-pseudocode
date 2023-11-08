@@ -15,20 +15,8 @@ begin
 
         if (nPhoneNumber not exists in database)
             begin
-                call inputValidation(
-                    "Account not exist. Do you want to register?",
-                    {"y", "n"},
-                    "Invalid input, Please enter 'y' for yes or 'n' for no",
-                    cRegisterChoice
-                );
-
-                if (cRegisterChoice == 'y')
-                    begin 
-                        call Register();
-                    end
-                endif
+                Display "Account is not registered"
             end
-        endif
 
         else if ((nPhoneNumber != nDatabasePhoneNumber) or (cPassword != cDatabasePassword))
             begin

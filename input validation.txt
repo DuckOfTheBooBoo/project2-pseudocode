@@ -11,6 +11,7 @@ begin
         cUserInput = cUserInput.toLowerCase
 
         // Iterate through arrValidInput and check if cUserInput match with one of the valid input
+        // array = {"y", "n"}
         for (nI = 0;nI < len(arrValidInput); nI++)
             begin
                 cValidInput = arrValidInput[nI];

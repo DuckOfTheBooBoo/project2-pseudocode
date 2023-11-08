@@ -15,14 +15,14 @@ procedure InputValidation(input character, input array, input character, output 
 // Main program
 begin
 	Character cAccountChoice, cServiceChoice, cMethod, cPaymentChoose, cEmail, cName, cForgotPassword, cTitle, cDescription, cProblemChoice, cReserveDuration;
-    Numeric nPhoneNumber, nPayment, nBCA_VA, nMandiri_VA, nCS, nServiceCost, nTotal;
+    Numeric nPhoneNumber, nPayment, nBCA_VA, nMandiri_VA, nCSNumber, nServiceCost, nTotal;
     Date dDate;
 
 	Display "Welcome to Craftsmen Service Reservation System";
 	Display "Do you have an account?";
 
 	// Accept user input
-	call inputValidation(
+	call InputValidation(
 		"Do you have an account?",
 		{"y", "n"},
 		"Invalid input. Please enter 'y' for yes or 'n' for no.",
