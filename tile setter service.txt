@@ -1,4 +1,4 @@
-procedure Plumber(output character cTitle, output character cDescription, output date dDate, output character cReserveDuration, output numeric nServiceCost)
+procedure TileSetter(output character cTitle, output character cDescription, output date dDate, output character cReserveDuration, output numeric nServiceCost)
 begin
     Character cProblemChoice;
     Display "What can we do for you?";
