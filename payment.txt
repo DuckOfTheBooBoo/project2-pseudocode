@@ -6,7 +6,7 @@ begin
         nPayment, nServiceCost
         nBCA_VA = 1900800000609717
         nMandiri_VA = 8889940001661878
-        nCS = 085697375021
+        nCSNumber = 085697375021
 
     while(true)
     begin
@@ -18,6 +18,8 @@ begin
         switch (cMethod)
             begin
                 case "1":
+                while(true)
+                begin
                     Display "Select Your payment method": 
                     Display "1.BCA"
                     Display "2.Mandiri"
@@ -30,6 +32,7 @@ begin
 
                             // Do the payment to respective method
                             accept nPayment
+                            break;
                         end
                         
                     else if (cPayment_choose == "2")
@@ -37,11 +40,15 @@ begin
                             Display "Your total price is " + nServiceCost
                             Display "Please submit your payment to this Virtual Account " + nMandiri_VA
                             accept nPayment
+                            break;
                         end
                     endif
-                    break
+                endwhile;
+				break;
 
                 case "2":
+                while(true)
+				begin
                     Display "select your payment method : "  
                     Display "1.Dana" 
                     Display "2.OVO"  
@@ -49,33 +56,36 @@ begin
 
                     accept cPayment_choose
 
-                    if (cPayment_choose == 1)
+                    if (cPayment_choose == "1")
                         begin 
                             Display "Your total price is " + nServiceCost
                             accept nPayment
+                            break;
                         end
 
-                    else if (cPayment_choose == 2)
+                    else if (cPayment_choose == "2")
                         begin 
                             Display "Your total price is " + nServiceCost
                             accept nPayment
+                            break;
                         end 
 
-                    else if (cPayment_choose == 3)
+                    else if (cPayment_choose == "3")
                         begin 
                             Display "Your total price is " + nServiceCost
                             accept nPayment
                             break
                         end
                     endif
-                    break
+                endwhile
+				break
 
                 Default:
                     Display "you have entered the wrong input"
             end    
     end
 
-    if(nPayment == Success) and (nPayment == nServiceCost)
+    if (nPayment == nServiceCost)
     begin
         Display "==========Your payment success=========="
         Display "Guest Name          :" + cName 
