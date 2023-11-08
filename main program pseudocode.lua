@@ -24,7 +24,7 @@ begin
 	// Accept user input
 	call inputValidation(
 		"Do you have an account?",
-		["y", "n"],
+		{"y", "n"},
 		"Invalid input. Please enter 'y' for yes or 'n' for no.",
 		cAccountChoice
 	);

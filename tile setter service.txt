@@ -10,7 +10,7 @@ begin
     
     call inputValidation(
         "Select problem: ",
-        ["1", "2", "3", "4", "5"],
+        {"1", "2", "3", "4", "5"},
         "Invalid input. Please enter number from 1 to 5.",
         cProblemChoice
     );

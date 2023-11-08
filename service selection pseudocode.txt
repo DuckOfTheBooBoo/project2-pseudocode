@@ -10,7 +10,7 @@ begin
 	// Accept user input
 	call inputValidation(
 		"Select service: ", 
-		["1", "2", "3", "4"], 
+		{"1", "2", "3", "4"}, 
 		"Invalid input. Please enter number from 1 to 4.",
 		cServiceChoice
 	);

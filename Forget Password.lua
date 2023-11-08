@@ -34,7 +34,7 @@ begin
                     end
                 else if (cNewPassword == cDatabasePassword)
                     begin
-                        Display "the new Password is the same as the old password, please insert a new one";
+                        Display "The new Password is the same as the old password, please insert a new one";
                     end
                 else
                     begin
@@ -45,7 +45,7 @@ begin
             end
             
             Save (cNewPassword) to database;
-            Display "new password has been changed, you may login now";            
+            Display "New password has been changed, you may login now";            
         end
     endif
 end

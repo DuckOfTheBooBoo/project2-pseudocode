@@ -17,7 +17,7 @@ begin
             begin
                 call inputValidation(
                     "Account not exist. Do you want to register?",
-                    ["y", "n"],
+                    {"y", "n"},
                     "Invalid input, Please enter 'y' for yes or 'n' for no",
                     cRegisterChoice
                 );
@@ -36,7 +36,7 @@ begin
                 
                 call inputValidation(
                     "Forgot Your Password?",
-                    ["y", "n"],
+                    {"y", "n"},
                     "Invalid input, Please enter 'y' for yes or 'n' for no",
                     cForgotPassword
                 );

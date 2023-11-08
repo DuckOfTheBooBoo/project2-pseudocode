@@ -20,7 +20,7 @@ begin
             begin
                 call InputValidation(
                     "The account is already registered, do you want to login?",
-                    ["y", "n"],
+                    {"y", "n"},
                     "Invalid input. Please enter only 'y' for yes or 'n' for no.",
                     cLoginChoice
                 );
